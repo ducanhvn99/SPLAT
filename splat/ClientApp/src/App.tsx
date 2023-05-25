@@ -3,7 +3,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import React, { FC, ReactElement } from 'react';
-import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useNavigate } from 'react-router-dom';
 
 import NavBar from './components/common/NavBar';
 import Landing from './scenes/landing/Landing';
@@ -18,7 +18,7 @@ import { UserRoles } from './models/User';
 
 const App: FC<{}> = (): ReactElement => {
     const [currentTheme, setCurrentTheme] = useDarkmode();
-    const history = useHistory();
+    const history = useNavigate();
 
     const [loggedIn, setLoggedIn] = React.useState(getLoggedIn());
     const theme = currentTheme === DarkmodeStates.DARK ? darkTheme : primaryTheme;

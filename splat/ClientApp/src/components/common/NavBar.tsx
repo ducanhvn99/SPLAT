@@ -16,7 +16,7 @@ import {
     Typography,
 } from '@mui/material';
 import React, { FC, ReactElement, useState } from 'react';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 import { DarkmodeStates } from '../../services/util/useDarkmode';
 import { login, logout, getLoggedIn, getCurrentUserInfo } from '../../services/util/login';
@@ -36,7 +36,7 @@ const NavBar: FC<NavBarProps> = (props: NavBarProps): ReactElement => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [loginOpen, setLoginOpen] = useState(false);
     
-    const history = useHistory();
+    const history = useNavigate();
 
     const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);

@@ -1,0 +1,1 @@
+Here is the instruction on how to publish SPLAT with IIS using Visual Studio
